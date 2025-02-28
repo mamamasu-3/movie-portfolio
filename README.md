@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# My TMDb React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+このリポジトリは、TMDb APIを活用して映画のポスターやあらすじを表示するReactアプリ（React 18）です。  
+人気映画のカルーセル表示や、映画検索機能を備えたリッチなデザインのサイトになっています。
 
-## Available Scripts
+## 目次
 
-In the project directory, you can run:
+- [特徴](#特徴)
+- [下準備](#下準備)
+- [インストール方法](#インストール方法)
+- [設定ファイルの作成](#設定ファイルの作成)
+- [APIトークンの取得方法](#apiトークンの取得方法)
+- [使い方](#使い方)
+- [ライセンス](#ライセンス)
 
-### `npm start`
+## 特徴
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **人気映画のカルーセル**  
+  TMDb APIから人気映画情報を取得し、動的にスライドするカルーセルで表示します。
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **映画検索機能**  
+  映画タイトルを入力すると、TMDb APIから検索結果を取得して表示します。
 
-### `npm test`
+- **リッチなデザイン**  
+  CSSと`react-slick`を用いて、見やすく、直感的に操作できるUIを実現しています。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 下準備
 
-### `npm run build`
+以下のツールをインストールしてください。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Node.js](https://nodejs.org/)（本プロジェクトでは、`node -v`が`v22.14.0`で動作確認済みです）
+- npm（Node.jsに同梱されています）
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## インストール方法
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. このリポジトリをクローンします。
 
-### `npm run eject`
+   ```bash
+   git clone https://github.com/あなたのユーザー名/MyTMDbReactApp.git
+   cd MyTMDbReactApp
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. 必要なパッケージをインストールします。
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. さらに、以下のコマンドでカルーセルに必要なパッケージもインストールしてください。
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   npm install react-slick slick-carousel
+   ```
 
-## Learn More
+## 設定ファイルの作成
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+プロジェクト内の `src/config.js` ファイルに、TMDb APIの**APIキー**と**APIリードアクセストークン**を設定してください。
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+例:
 
-### Code Splitting
+```js
+// src/config.js
+const config = {
+  TMDB_API_KEY: "YOUR_API_KEY_HERE",             // ご自身のTMDb APIキーを設定
+  TMDB_READ_ACCESS_TOKEN: "YOUR_READ_ACCESS_TOKEN_HERE",  // ご自身のTMDb APIリードアクセストークンを設定
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+export default config;
+```
 
-### Analyzing the Bundle Size
+## APIトークンの取得方法
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+TMDb APIを利用するには、APIキーとAPIリードアクセストークンが必要です。  
+これらの取得方法については、以下のURLを参照してください。
 
-### Making a Progressive Web App
+[TMDb APIのトークンの取得方法 - Chocolat5](https://chocolat5.com/tips/tmdb-api/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+簡単な手順は以下の通りです：
 
-### Advanced Configuration
+1. [TMDbの公式サイト](https://www.themoviedb.org/)にアクセスし、アカウントを作成します。  
+2. アカウントにログイン後、APIセクションへ移動し、APIキーを申請します。  
+3. 同様に、必要に応じてリードアクセストークンも取得します。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 使い方
 
-### Deployment
+1. 設定ファイルにAPIキーとアクセストークンを設定後、以下のコマンドでアプリを起動します。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   ```bash
+   npm start
+   ```
 
-### `npm run build` fails to minify
+2. ブラウザで [http://localhost:3000](http://localhost:3000) にアクセスすると、人気映画のカルーセルと映画検索機能が動作するアプリが表示されます。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ライセンス
+
+このプロジェクトはMITライセンスのもと公開されています。  
+詳しくは、LICENSEファイルをご参照ください.
