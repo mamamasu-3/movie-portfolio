@@ -1,0 +1,29 @@
+/* src/components/MovieCarousel.css */
+.carousel-container {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .carousel-item {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .movie-poster {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .movie-poster:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-info {
+    padding: 10px 0;
+  }
+  

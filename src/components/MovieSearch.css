@@ -1,0 +1,64 @@
+/* src/components/MovieSearch.css */
+.search-container {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-item {
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+}
+
+.search-poster {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.search-poster:hover {
+  transform: scale(1.05);
+}
+
+.search-info {
+  margin-top: 10px;
+}

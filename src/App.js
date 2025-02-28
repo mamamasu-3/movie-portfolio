@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
+import MovieCarousel from './components/MovieCarousel';
+import MovieSearch from './components/MovieSearch';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app-container">
+      <header>
+        <h1>私の映画ポートフォリオ</h1>
       </header>
+      <main>
+        <MovieSearch />
+        <MovieCarousel />
+      </main>
+      <footer>
+        <p>© 2025 My Movie Portfolio</p>
+      </footer>
     </div>
   );
 }
